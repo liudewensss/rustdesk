@@ -116,13 +116,13 @@ pub fn global_init() -> bool {
         }
     }
     {
-        *hbb_common::config::PROD_RENDEZVOUS_SERVER.write().unwrap() = "114.66.52.77".to_owned();
+        *hbb_common::config::PROD_RENDEZVOUS_SERVER.write().unwrap() = "yc.liudewen.com".to_owned();
         hbb_common::config::DEFAULT_SETTINGS
             .write()
             .unwrap()
             .insert(
                 hbb_common::config::keys::OPTION_KEY.to_owned(),
-                "WX6p8pc7vMTj9xlTbhTfeQPnC8vxfTMD+WRhaaN597M=".to_owned(),
+                "dhIvSi0fYs3AabKAbxSaZXmapjaMhCLR8zcCGXDQHgY=".to_owned(),
             );
     }
     true
@@ -1504,7 +1504,7 @@ pub async fn get_key(sync: bool) -> String {
         let mut options = crate::ipc::get_options_async().await;
         options.remove("key").unwrap_or_default()
     };
-    if key.is_empty() {
+    if !config::RS_PUB_KEY.is_empty() {
         key = config::RS_PUB_KEY.to_owned();
     }
     key
