@@ -115,6 +115,16 @@ pub fn global_init() -> bool {
             crate::server::wayland::init();
         }
     }
+    {
+        *hbb_common::config::PROD_RENDEZVOUS_SERVER.write().unwrap() = "114.66.52.77".to_owned();
+        hbb_common::config::DEFAULT_SETTINGS
+            .write()
+            .unwrap()
+            .insert(
+                hbb_common::config::keys::OPTION_KEY.to_owned(),
+                "WX6p8pc7vMTj9xlTbhTfeQPnC8vxfTMD+WRhaaN597M=".to_owned(),
+            );
+    }
     true
 }
 
