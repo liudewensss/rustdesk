@@ -216,6 +216,7 @@ List<Widget> ServerConfigImportExportWidgets(
 List<(String, String)> otherDefaultSettings() {
   List<(String, String)> v = [
     ('View Mode', kOptionViewOnly),
+    ('Show quality monitor', kOptionShowQualityMonitor),
     if ((isDesktop || isWebDesktop))
       ('show_monitors_tip', kKeyShowMonitorsToolbar),
     if ((isDesktop || isWebDesktop))
@@ -224,7 +225,6 @@ List<(String, String)> otherDefaultSettings() {
     ('Follow remote cursor', kOptionFollowRemoteCursor),
     ('Follow remote window focus', kOptionFollowRemoteWindow),
     if ((isDesktop || isWebDesktop)) ('Zoom cursor', kOptionZoomCursor),
-    ('Show quality monitor', kOptionShowQualityMonitor),
     ('Mute', kOptionDisableAudio),
     if (isDesktop) ('Enable file copy and paste', kOptionEnableFileCopyPaste),
     ('Disable clipboard', kOptionDisableClipboard),
